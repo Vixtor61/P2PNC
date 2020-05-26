@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Estudiante</title>
 </head>
 <body>
 <span th:text="${message}" style="color: green;"></span><br>
 <form th:action="@{/ingresarCategoria}" method="get">
-<label>Ingresar Categoría</label>
-<input type="submit" value="Ingresar Categoría">
+
+<input type="submit" value="Ingresar CategorÃ­a">
 </form>
+<br>
 
 
 <form th:action="@{/ingresarLibro}" method="get">
-<label>Ingresar Categoría</label>
+
 <input type="submit" value="Ingresar Libro">
 </form>
-
+<br>
 
 
 <form th:action="@{/listado}" method="get">
-<label>listado</label>
-<input type="submit" value="listado">
-</form>
 
+<input type="submit" value="Ver Libros">
+</form>
+<br>
 
 </body>
 </html>

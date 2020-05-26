@@ -10,7 +10,7 @@
 
 <form th:action="@{/saveC}" th:object="${categoria}" method="post">
 <label>Nombre Categoría</label>
-<input type="text" th:field="*{categoria}"><br>
+<input type="text" th:field="*{categoria}">
 <span th:errors="*{categoria}" style="color: red;"></span><br>
 <!-- 
 <span th:errors="*{nombre}" style="color: red;"></span><br>
@@ -30,8 +30,8 @@
     
  -->
 
-<label>Guardar</label>
-<input type="submit" value="guardar">
+
+<input type="submit" value="Guardar categoría">
 
 
 

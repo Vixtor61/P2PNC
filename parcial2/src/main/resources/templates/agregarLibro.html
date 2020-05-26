@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Estudiante</title>
 </head>
 <body>
 
 
 <form th:action="@{/saveL}" th:object="${libro}" method="post">
-<label>Titulo</label>
-<input type="text" th:field="*{titulo}"><br>
+<label>Título</label>
+<input type="text" th:field="*{titulo}">
 <span th:errors="*{titulo}" style="color: red;"></span><br>
 <label>Autor</label>
-<input type="text" th:field="*{autor}"><br>
+<input type="text" th:field="*{autor}">
 <span th:errors="*{autor}" style="color: red;"></span><br>
 
 <label>ISBN</label>
-<input type="text" th:field="*{isbn}"><br>
+<input type="text" th:field="*{isbn}">
 <span th:errors="*{isbn}" style="color: red;"></span><br>
  
 
-
+<label>Categoría</label>
+<span th:errors="*{isbn}" style="color: red;"></span><br>
  <select class="form-control" name="iC"  id="iC">
     <option th:each="categoria_i : ${categorias}" th:value="${categoria_i.id_categoria}" th:text="${categoria_i.categoria}"></option>
     </select>
@@ -29,13 +30,13 @@
  <label>Estado</label><br>
 <br>
 <label>Activo</label><br>
-<input type="radio" th:field="*{estado}" th:value="${true}">
+<input type="radio" th:field="*{estado}" th:value="${true}"><br>
 <label>Inactivo</label><br>
-<input type="radio" th:field="*{estado}" th:value="${false}">
+<input type="radio" th:field="*{estado}" th:value="${false}"><br>
 
 
-<label>Ver Libros</label>
-<input type="submit" value="Ver Libros">
+
+<input type="submit" value="Guardar">
 
 
 

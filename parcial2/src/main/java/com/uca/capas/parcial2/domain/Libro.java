@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -42,17 +43,25 @@ public class Libro {
 	@Column(name="s_isbn")
 	private String isbn;
 	
+	
+	@NotNull(message = "Por favor Seleccione una opcion")
+	@Column(name="b_estado")
+	private boolean estado;
+	
 
 	//@NotNull(message = "el campo no puede estar vacio")
 	@Column(name="f_ingreso")
 	private Calendar fecha_ingreso;
 	
+
+	
+	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "c_categoria")
 	private Categoria categoria;
 	//@NotNull(message = "el campo no puede estar vacio")
-	@Column(name="b_estado")
-	private Boolean estado;
+	//@NotE(message = "Por favor Seleccione una opcion")
 	
 	public Libro() {
 		// TODO Auto-generated constructor stub
@@ -112,7 +121,7 @@ public class Libro {
 		}
 		else {
 			Date date = fecha_ingreso.getTime();  
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 			return sdf.format(date);
 			
 		
@@ -121,7 +130,7 @@ public class Libro {
 	}
 	
 	public String getEstadoDelegate() {
-		if(this.estado==null) {
+		if(!this.estado) {
 			return "";
 		}
 		else {

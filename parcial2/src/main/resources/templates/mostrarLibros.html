@@ -6,5 +6,32 @@
 </head>
 <body>
 
+<table>
+	<thead>
+	<th>Titulo</th>
+	<th>Autor</th>
+		<th>ISBN</th>
+	<th>Categoria</th>
+	<th>Date</th>
+
+	</thead>
+	<th:block th:each="libro, row: ${libros}">
+	<tr>
+
+		<th th:text="${libro.titulo}"/>
+		<th th:text="${libro.autor}"/>
+		<th th:text="${libro.isbn}"/>
+
+		
+			<th th:text="${libro.categoria.categoria}"/>
+			<th th:text="${libro.fechaDelegate}"/>
+	</tr>
+	</th:block>
+
+</table>
+
+<a href="/"> REGRESAR</a>
+
+
 </body>
 </html>

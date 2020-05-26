@@ -91,7 +91,7 @@ public class MainController {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			mav.setViewName("agregarLibro");
+			mav.setViewName("index");
 			
 
 		}
