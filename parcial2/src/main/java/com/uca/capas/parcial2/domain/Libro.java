@@ -121,7 +121,7 @@ public class Libro {
 		}
 		else {
 			Date date = fecha_ingreso.getTime();  
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
 			return sdf.format(date);
 			
 		
