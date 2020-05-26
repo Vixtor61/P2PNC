@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Estudiante</title>
+</head>
+<body>
+
+
+<form th:action="@{/saveL}" th:object="${libro}" method="post">
+<label>Titulo</label>
+<input type="text" th:field="*{titulo}"><br>
+<span th:errors="*{titulo}" style="color: red;"></span><br>
+<label>Autor</label>
+<input type="text" th:field="*{autor}"><br>
+<span th:errors="*{autor}" style="color: red;"></span><br>
+
+<label>ISBN</label>
+<input type="text" th:field="*{isbn}"><br>
+<span th:errors="*{isbn}" style="color: red;"></span><br>
+ 
+
+
+ <select class="form-control" name="iC"  id="iC">
+    <option th:each="categoria_i : ${categorias}" th:value="${categoria_i.id_categoria}" th:text="${categoria_i.categoria}"></option>
+    </select>
+    <span th:errors="*{categoria}" style="color: red;"></span><br>
+    <br>
+ <label>Estado</label><br>
+<br>
+<label>Activo</label><br>
+<input type="radio" th:field="*{estado}" th:value="${true}">
+<label>Inactivo</label><br>
+<input type="radio" th:field="*{estado}" th:value="${false}">
+
+
+<label>Ver Libros</label>
+<input type="submit" value="Ver Libros">
+
+
+
+
+</form>
+<!-- 
+<form th:action="@{/listado}" method="get">
+<label>listado</label>
+<input type="submit" value="listado">
+</form>
+ -->
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<form th:action="@{/saveC}" th:object="${categoria}" method="post">
+<label>Nombre Categoría</label>
+<input type="text" th:field="*{categoria}"><br>
+<span th:errors="*{categoria}" style="color: red;"></span><br>
+<!-- 
+<span th:errors="*{nombre}" style="color: red;"></span><br>
+<label>Apellido</label>
+<input type="text" th:field="*{apellido}"><br>
+<span th:errors="*{apellido}" style="color: red;"></span><br>
+<label>Nit</label>
+<input type="text" th:field="*{nit}"><br>
+<span th:errors="*{nit}" style="color: red;"></span><br>
+
+
+
+ <select class="form-control" name="idimp"  id="idimp">
+    <option th:each="importancia_i : ${importancias}" th:value="${importancia_i.id_importancia}" th:text="${importancia_i.importancia}"></option>
+    </select>
+    <span th:errors="*{importancia}" style="color: red;"></span><br>
+    
+ -->
+
+<label>Guardar</label>
+<input type="submit" value="guardar">
+
+
+
+
+</form>
+</body>
+</html>
